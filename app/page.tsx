@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { callAIAgent } from '@/lib/aiAgent'
+import { callAIAgent, extractText } from '@/lib/aiAgent'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Textarea } from '@/components/ui/textarea'
@@ -162,8 +162,11 @@ What's one authentic moment you could share this week?
       const result = await callAIAgent(prompt, LINKEDIN_CONTENT_AGENT_ID)
 
       if (result.success) {
-        // Extract text content
-        const rawText = result?.response?.result?.text ?? result?.response?.message ?? ''
+        // Extract text content using the helper function
+        const rawText = extractText(result.response)
+
+        console.log('Agent response:', result)
+        console.log('Extracted text:', rawText)
 
         // Strip inline markdown images from caption (they render separately)
         const cleanCaption = rawText.replace(/!\[.*?\]\(.*?\)/g, '').trim()
@@ -173,6 +176,8 @@ What's one authentic moment you could share this week?
         const files = Array.isArray(result?.module_outputs?.artifact_files)
           ? result.module_outputs.artifact_files
           : []
+
+        console.log('Module outputs files:', files)
 
         if (files.length > 0 && files[0]?.file_url) {
           setImageUrl(files[0].file_url)
