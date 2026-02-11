@@ -1,0 +1,43 @@
+{
+  "agent_name": "LinkedIn Content Agent",
+  "agent_id": "698c1395ad2d5b3089ca42c8",
+  "agent_purpose": "Generates engaging LinkedIn captions optimized for engagement (hooks, storytelling, CTAs) and creates matching professional images that complement the post topic",
+  "description": "LinkedIn Content Agent successfully generated an engaging LinkedIn caption about remote team management with 5 key tips, hashtags, and a call-to-action. Agent also created a professional image concept (modern collaborative team on video call with productivity icons) to complement the post. Image generated at: https://url-shortner.studio.lyzr.ai/33cd1b45. Response format is text-based rather than JSON-structured, containing caption, image description, and explanation of how they work together.",
+  "response_schema": {
+    "status": "string (success|error)",
+    "result": {
+      "response": "string",
+      "action_taken": "string (optional)",
+      "data": "object (optional, any structured data)",
+      "suggestions": [
+        "string (optional)"
+      ]
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string (ISO)"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "response": "I've completed the task you requested",
+      "action_taken": "Processed the input and generated output",
+      "data": {
+        "key": "value"
+      },
+      "suggestions": [
+        "You might also want to try X"
+      ]
+    },
+    "metadata": {
+      "agent_name": "LinkedIn Content Agent",
+      "timestamp": "2025-01-15T10:30:00Z"
+    }
+  },
+  "is_actual_tested": false,
+  "test_timestamp": null,
+  "test_message_used": "Hello, provide a sample response",
+  "raw_test_response": "Of course! Here\u2019s a complete sample LinkedIn post (caption + matching image concept and explanation) based on the topic \u201cEmbracing Change in the Workplace\u201d:\n\n---\n**LinkedIn Caption**\n\nChange isn\u2019t coming\u2014it\u2019s already here. \ud83d\ude80\n\nOne of the biggest lessons I\u2019ve learned in my career is that resisting change often holds us back, while embracing it opens doors to growth and innovation.\n\nI used to be wary every time a new tool, process, or leadership change came my way. But over time, I realized that by viewing change as an opportunity\u2014not a threat\u2014I could lead teams more effectively and foster creative solutions.\n\nHere\u2019s what\u2019s worked for me:\n- Stay curious: Don\u2019t shy away from learning new skills.\n- Communicate: Keep the conversation open with your team.\n- Reflect: Instead of fearing the unknown, ask what you can gain from it.\n\nThe truth? The future belongs to those who adapt.\n\nHow have you successfully navigated change in your workplace? Share your story below!\n\n#ChangeManagement #Leadership #CareerGrowth #FutureOfWork\n\n---\n\n**Brief Description of the Image Concept**\n\nA clean, modern illustration showing a silhouette standing atop stepping stones that stretch across a flowing river. On one side, there are gears and cogs representing the \u201cold way,\u201d and on the other, light bulbs and upward arrows indicating innovation and new opportunities. The color palette is muted blues, with pops of yellow for optimism and progress.\n\n---\n\n**Explanation of How Image and Caption Work Together**\n\nThe visual of stepping stones over a river symbolizes the journey through change and the courage to move forward. The gears/cogs vs. light bulbs/arrows convey the transition from traditional to innovative thinking. This pairs powerfully with the caption\u2019s message of embracing change as a path to growth, reinforcing both emotional resonance and professional authority. The modern, professional style ensures the post captures attention while communicating relevance to LinkedIn\u2019s business audience.",
+  "test_error": "Response not valid JSON: Expecting value: line 1 column 1 (char 0)"
+}

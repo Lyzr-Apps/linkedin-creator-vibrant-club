@@ -1,0 +1,43 @@
+{
+  "workflow_name": "LinkedIn Post Generator",
+  "workflow_type": "single_agent",
+  "agents": [
+    {
+      "agent_id": "698c1395ad2d5b3089ca42c8",
+      "agent_name": "LinkedIn Content Agent",
+      "agent_type": "image_output",
+      "node_id": "linkedin_content_agent",
+      "description": "Generates engaging LinkedIn captions optimized for engagement (hooks, storytelling, CTAs) and creates matching professional images that complement the post topic",
+      "provider": "OpenAI",
+      "model": "gpt-4.1",
+      "capabilities": {
+        "image_output": true,
+        "image_model": "gemini/gemini-3-pro-image-preview",
+        "credential_id": "lyzr_google"
+      }
+    }
+  ],
+  "workflow_flow": [
+    {
+      "step": 1,
+      "node": "input_node",
+      "type": "input",
+      "label": "User Input"
+    },
+    {
+      "step": 2,
+      "node": "linkedin_content_agent",
+      "type": "agent",
+      "agent_id": "698c1395ad2d5b3089ca42c8",
+      "label": "LinkedIn Content Agent"
+    },
+    {
+      "step": 3,
+      "node": "output_node",
+      "type": "output",
+      "label": "Generated Post & Image"
+    }
+  ],
+  "created_at": "2026-02-11",
+  "status": "complete"
+}
