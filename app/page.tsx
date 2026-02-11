@@ -168,8 +168,21 @@ What's one authentic moment you could share this week?
         console.log('Agent response:', result)
         console.log('Extracted text:', rawText)
 
+        // Parse the response to extract only the LinkedIn caption
+        // The agent returns multiple sections separated by ---
+        let captionText = rawText
+
+        // Extract just the LinkedIn Caption section (before first ---)
+        const sections = rawText.split('---')
+        if (sections.length > 0) {
+          captionText = sections[0].trim()
+
+          // Remove the "**LinkedIn Caption**" header if present
+          captionText = captionText.replace(/^\*\*LinkedIn Caption\*\*\n+/i, '').trim()
+        }
+
         // Strip inline markdown images from caption (they render separately)
-        const cleanCaption = rawText.replace(/!\[.*?\]\(.*?\)/g, '').trim()
+        const cleanCaption = captionText.replace(/!\[.*?\]\(.*?\)/g, '').trim()
         setCaption(cleanCaption)
 
         // Extract image from module_outputs
